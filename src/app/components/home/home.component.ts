@@ -13,10 +13,10 @@ export class HomeComponent implements OnInit {
    ngOnInit(): void {
   }
 
-  searchUser ="";
+  searchText ="";
 
   search(){
-    this.router.navigate(['/search-results', this.searchUser]);
+    this.router.navigate(['/search-results', this.searchText]);
   }
 
 }

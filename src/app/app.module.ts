@@ -7,13 +7,15 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from  '@angular/common/http'
+import { HttpClientModule } from  '@angular/common/http';
+import { UserdetailsComponent } from './components/userdetails/userdetails.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    UserdetailsComponent
   ],
   imports: [
     BrowserModule,

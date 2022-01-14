@@ -6,11 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class GithubUsersService {
 
+  //  private searchText ='';
+
   constructor(private http:HttpClient) { }
 
-  public getSearchResults(searchUser:any){
+  public getSearchResults(searchText:any){
     return new Promise((resolve, reject) =>{
-      this.http.get('https://api.github.com/users').subscribe(
+      this.http.get(`https://api.github.com/users/${searchText}`).subscribe(
         (response)=>{
           resolve(response);
         },

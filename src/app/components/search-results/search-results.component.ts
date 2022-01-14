@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GithubUsersService } from 'src/app/services/github-users.service';
 
 @Component({
@@ -9,7 +9,10 @@ import { GithubUsersService } from 'src/app/services/github-users.service';
 })
 export class SearchResultsComponent implements OnInit {
   
-  constructor(public githubUserService: GithubUsersService, private route: ActivatedRoute,) { }
+  constructor(public githubUserService: GithubUsersService, private route: ActivatedRoute,private router:Router) {
+
+    
+   }
 
   // ngOnInit(): void {
   //   if (this.searchText = this.route.snapshot.paramMap.get('query') !== null) {
@@ -28,5 +31,10 @@ export class SearchResultsComponent implements OnInit {
   }
   searchText: any = '';
   results:any;
+
+
+  showUserDetails(userId:number){
+    this.router.navigate(['/userdetails',userId]);
+  }
 
 }

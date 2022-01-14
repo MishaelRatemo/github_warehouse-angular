@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GithubUsersService } from 'src/app/services/github-users.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor( private router:Router) { }
+  constructor( public githubUserService:GithubUsersService , private router:Router) { }
 
    ngOnInit(): void {
   }
@@ -17,6 +18,11 @@ export class HomeComponent implements OnInit {
 
   search(){
     this.router.navigate(['/search-results', this.searchText]);
+    this.githubUserService.getSearchResults(this.searchText).then((response)=>{
+      console.log(response);
+    }).catch(errors=>{
+      console.error(errors)
+    })
   }
 
 }

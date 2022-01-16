@@ -34,7 +34,7 @@
           </td>
         </tr>
         <tr>
-          <td class="text-center">
+          <td colspan=" 100%" class="text-center">
             <p>{{ results.bio }}</p>
           </td>
           <td colspan="100%" *ngIf="results.bio == null">
@@ -43,8 +43,8 @@
         </tr>
         <tr>
           <td>Email Address</td>
-          <td colspan="2">{{ results.email }}</td>
-          <td col *ngIf="results.email == null" class="text-danger">
+          <td colspan="2" class=" text-start">{{ results.email }}</td>
+          <td col *ngIf="results.email == null" class=" text-start text-danger">
             No email provided by user
           </td>
         </tr>

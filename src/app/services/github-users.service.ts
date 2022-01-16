@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +8,11 @@ import { Injectable } from '@angular/core';
 export class GithubUsersService {
    header = {
     headers: new HttpHeaders()
-      .set('Authorization',  `Bearer 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`)
+      .set('Authorization',  `Bearer ${environment.token}`)
   }
   
 
   //  private searchText ='';
-   private token = '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';
 
   constructor(private http:HttpClient) { }
 

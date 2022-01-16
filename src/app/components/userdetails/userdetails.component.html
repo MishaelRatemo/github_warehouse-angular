@@ -1,26 +1,26 @@
-<div class="row m-auto bg-dark  d-flex flex-sm-wrap">
+<div  class="row m-auto bg-dark  d-flex flex-sm-wrap">
     <div class="col-5 d-flex flex-column text-light bg-success  p-3">
         <h3> Profile</h3>
         <img src="" class=' img-fluid' alt="user profile image">
     </div>
     <div class='col-7  text-light bg-primary p-3'>
-        <h1 class='text-center'>User Detaills</h1>
+        <h1 class='text-center'>{{uDetails.login}} Detaills</h1>
         <div class='d-flex flex-column'>
-            <h5> <span>Full Name:</span> </h5>
-            <p> <span class=" fw-bolder"> Bio :</span> Lorem ipsum dolor sit amet consectetur adipisici ndjdnjdn</p>
-            <h5> <span>Email Address:</span>Abc@gmail.com</h5>
+            <h5> <span>Full Name:</span> {{uDetails.name}} </h5>
+            <p> <span class=" fw-bolder"> Bio :</span> {{uDetails.bio}}</p>
+            <h5> <span>Email Address:</span>{{uDetails.email}}</h5>
             <h3>Stats</h3>
             <div class='d-flex flex-column '>
                 <h6><span class=''>Joined github </span> 4 years ago</h6>
                 <ul class=' d-flex flex-column  '>
-                    <li><span class=' btn btn-primary rounded-circle'>5</span> followers</li>
-                    <li><span class=' btn btn-primary rounded-circle'>5</span> following</li>
-                    <li><span class=' btn btn-primary rounded-circle'>5</span> <strong>Repositories</strong> </li>
-                    <li><span class=' btn btn-primary rounded-circle'>5</span> gists</li>
+                    <li><span class=' btn btn-primary rounded-circle'>{{uDetails.folloers}}</span> followers</li>
+                    <li><span class=' btn btn-primary rounded-circle'>{{uDetails.following}}</span> following</li>
+                    <li><span class=' btn btn-primary rounded-circle'>{{uDetails.public_repos}}</span> <strong>Repositories</strong> </li>
+                    <li><span class=' btn btn-primary rounded-circle'>{{uDetails.public_gists}}</span> gists</li>
                     <li><span class=' btn btn-primary rounded-circle'>5</span> forks</li>
                 </ul>
             </div>
-            <p> Located in: <span class=''> User location </span></p>
+            <p> Located in: <span class=''> {{uDetails.location }}</span></p>
         </div>
     </div>
 </div>

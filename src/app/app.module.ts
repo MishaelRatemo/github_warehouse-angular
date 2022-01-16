@@ -8,14 +8,16 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from  '@angular/common/http';
-import { UserdetailsComponent } from './components/userdetails/userdetails.component'
+import { UserdetailsComponent } from './components/userdetails/userdetails.component';
+import { TimepassedPipe } from './pipes/timepassed.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchResultsComponent,
-    UserdetailsComponent
+    UserdetailsComponent,
+    TimepassedPipe
   ],
   imports: [
     BrowserModule,

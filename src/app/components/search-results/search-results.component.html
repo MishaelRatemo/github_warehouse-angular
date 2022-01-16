@@ -1,63 +1,88 @@
-<main  class="row m-auto bg-dark  d-flex flex-sm-wrap">
-  <div class="col-5 d-flex flex-column text-light text-center  p-3">
-      <h3 class='text-center'> Profile</h3>
-      <img [src]=" results.avatar_url" class=' mb-3 rounded-pill img-fluid' alt="user profile image">
-      <h3>Joined github {{results.created_at | timepassed}}</h3>
-
+<main class="row m-auto bg-dark d-flex flex-sm-wrap">
+  <div class="col-5 d-flex flex-column text-light text-center p-3">
+    <h3 class="text-center">Profile</h3>
+    <img
+      [src]="results.avatar_url"
+      class="mb-3 rounded-pill img-fluid"
+      alt="user profile image"
+    />
+    <h3>Joined github {{ results.created_at | timepassed }}</h3>
+    <h4>
+      Located in: <span class=""> {{ results.location }}</span>
+    </h4>
+    <h4 *ngIf="results.location == null">Located in: No location</h4>
   </div>
-  <div class='col-7  text-light  p-3'>
-      <h1 class='text-center'>{{results.login}} Detaills</h1>
-      <div class='d-flex flex-column'>
-          <!-- <h5> <span>Full Name:</span> {{results.name}} </h5> -->
-          <!-- <p> <span class=" fw-bolder"> Bio :</span> {{results.bio}}</p> -->
-          <!-- <h5> <span>Email Address:</span>{{results.email}}</h5> -->
-          <h3>Stats</h3>
-          <div class='d-flex flex-column '>
-              <!-- <h6><span class=''>Joined github </span> 4 years ago</h6> -->
-              <ul class=' d-flex flex-column bg-light bg-opacity-50 bg  '>
-                  <li class="p-1 "><span class=' btn btn-primary  rounded-circle'>{{results.followers}}</span> Followers</li>
-                  <li class="p-1 "><span class=' btn btn-success  rounded-circle'>{{results.following}}</span> Following</li>
-                  <li class="p-1 "><span class=' btn btn-primary  rounded-circle'>{{results.public_repos}}</span> </li>
-                  <li class="p-1 "><span class=' btn btn-primary  rounded-circle'>{{results.public_gists}}</span> gists</li>
-                  <!-- <li><span class=' btn btn-primary rounded-circle'>5</span> forks</li> -->
-              </ul>
-          </div>
-          <p> Located in: <span class=''> {{results.location }}</span></p>
-      </div>
+  <div class="col-7 text-light p-3">
+    <h1 class="text-center">{{ results.login }} Detaills</h1>
 
-      <table class="table  bg-light text-light bg-opacity-25">
-        <tbody>
-          <tr>          
-            <td colspan='2'> <h2>Full Name</h2> </td>
-            <td><h2>{{results.name}}</h2></td> 
-            <td *ngIf="results.name ==null"><h2 class='text-danger'> No name</h2></td> 
-          </tr>
-          <tr>
-            <td colspan='100%' class="text-center"><p>{{results.login}}'s bio </p></td> 
-          </tr>  
-          
-          <tr>
-            <td colspan='3' class=" text-center"><p>{{results.bio}}</p></td> 
-            <td *ngIf="results.bio ==null"><h4 class=" text-danger">Ooops {{ results.login}} has no bio</h4></td> 
-          </tr>
-          <tr>
-              <td>Email Address</td>
-              <td colspan='2'> {{results.email}}</td>
-              <td *ngIf="results.email ==null" class='text-danger'> No email provided by user</td> 
-          </tr>
-          <tr>
-            <th colspan='100%' class=" text-center"> Stats </th>            
-          </tr>
-          <tr>
-            <td colspan='100%' ><span class=' btn btn-primary  rounded-circle'>{{results.followers}} </span> Github followers </td>
-          </tr>    
-          <tr>
-            <td colspan='100%' >  <span class=' btn btn-primary  rounded-circle'>{{results.following}} </span>Folllowing Github users </td>
-          </tr>   
-          <tr>
-            <td colspan='100%' ><span class=' btn btn-secondary  rounded-circle'>{{results.public_repos}} </span> Public Repositories</td>
-          </tr>    
-        </tbody>
-      </table>
+    <table class="table bg-light text-light bg-opacity-25">
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <h2>Full Name</h2>
+          </td>
+          <td>
+            <h2>{{ results.name }}</h2>
+          </td>
+          <td *ngIf="results.name == null">
+            <h2 class="text-danger">No name</h2>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="100%" class="text-center">
+            <p>{{ results.login }}'s bio</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="text-center">
+            <p>{{ results.bio }}</p>
+          </td>
+          <td colspan="100%" *ngIf="results.bio == null">
+            <h4 class="text-danger">Ooops {{ results.login }} has no bio</h4>
+          </td>
+        </tr>
+        <tr>
+          <td>Email Address</td>
+          <td colspan="2">{{ results.email }}</td>
+          <td col *ngIf="results.email == null" class="text-danger">
+            No email provided by user
+          </td>
+        </tr>
+        <tr>
+          <th colspan="100%" class="text-center">Stats</th>
+        </tr>
+        <tr>
+          <td colspan="100%">
+            <span class="btn btn-success rounded-circle"
+              >{{ results.followers }}
+            </span>
+            Github followers
+          </td>
+        </tr>
+        <tr>
+          <td colspan="100%">
+            <span class="btn btn-primary rounded-circle"
+              >{{ results.following }} </span
+            >Folllowing Github users
+          </td>
+        </tr>
+        <tr>
+          <td colspan="100%">
+            <span class="btn btn-dark rounded-circle"
+              >{{ results.public_repos }}
+            </span>
+            Public Repositories
+          </td>
+        </tr>
+        <tr>
+          <td colspan="100%">
+            <span class="btn btn-light rounded-circle"
+              >{{ results.public_gists }}
+            </span>
+            Public gists
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </main>

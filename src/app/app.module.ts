@@ -9,7 +9,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from  '@angular/common/http';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
-import { TimepassedPipe } from './pipes/timepassed.pipe'
+import { TimepassedPipe } from './pipes/timepassed.pipe';
+import { TopnavbarComponent } from './components/topnavbar/topnavbar.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TimepassedPipe } from './pipes/timepassed.pipe'
     HomeComponent,
     SearchResultsComponent,
     UserdetailsComponent,
-    TimepassedPipe
+    TimepassedPipe,
+    TopnavbarComponent
   ],
   imports: [
     BrowserModule,

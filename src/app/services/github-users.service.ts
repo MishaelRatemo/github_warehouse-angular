@@ -29,6 +29,9 @@ export class GithubUsersService {
     })
   }
 
+
+//  reposData: Array<any>=[];
+
   public getReposResult(searchText:any){
     return new Promise((resolve, reject) =>{
       this.http.get(`https://api.github.com/search/repositories?q=${searchText}`,this.header).subscribe(

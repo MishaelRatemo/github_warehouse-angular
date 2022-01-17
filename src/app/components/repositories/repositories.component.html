@@ -1,0 +1,27 @@
+<main class=" ">
+    <h3 class=" text-light text-center"> Search results for {{repositoryName}} </h3>
+
+    <div class="container-fluid d-flex flex-wrap justify-content-around align-items-center">
+        <div *ngFor="let item of reposResults" class="card bg-light text-center word-wrap mb-2">
+            <div class="card-header bg-secondary">
+                <h4 class=" text-light"> {{item.name}}</h4>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Owner: {{ item.owner.login}}</h5>
+                <div class=" h-25 overflow-hidden">
+                    <p class="card-text word-wrap overflow-auto"> {{item.description}}</p>
+                    <p *ngIf="item.description ==null" class="card-text text-danger word-wrap overflow-auto"> No project
+                        desscription</p>
+                </div>
+
+                <a href="" class="btn btn-info">More Details</a>
+            </div>
+            <div class="card-footer bg-footer  text-muted">
+                Created {{ item.created_at |timepassed}} ago
+            </div>
+        </div>
+
+    </div>
+
+
+</main>

@@ -10,7 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from  '@angular/common/http';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component';
 import { TimepassedPipe } from './pipes/timepassed.pipe';
-import { TopnavbarComponent } from './components/topnavbar/topnavbar.component'
+import { TopnavbarComponent } from './components/topnavbar/topnavbar.component';
+import { ReposComponent } from './components/repos/repos.component';
+import { RepositoriesComponent } from './components/repositories/repositories.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TopnavbarComponent } from './components/topnavbar/topnavbar.component'
     SearchResultsComponent,
     UserdetailsComponent,
     TimepassedPipe,
-    TopnavbarComponent
+    TopnavbarComponent,
+    ReposComponent,
+    RepositoriesComponent
   ],
   imports: [
     BrowserModule,

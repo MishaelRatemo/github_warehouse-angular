@@ -1,0 +1,10 @@
+<main class='d-flex flex-column'>
+    <h1 class="text-white mb-3 display-3 fw-bolder">Github Warehouse</h1> <br>
+    <div class=" d-flex flex-column">
+        <input [(ngModel)]='repoName'  class="form-control m-auto rounded-pill fs-4 p-4   align-items-center" type="text" placeholder="Find a repo in github " aria-label="Search">  <br>
+        <button (click)="searchRepo()" class="m-auto rounded-pill fs-4 p-3 align-items-center text-light btn btn-lg fw-bolder btn-outline-success"> Search Repo </button>
+    
+        <p class='text-light fs-5 text-center'>Or Search <a routerLink='/home' class=" text-info fw-bolder fs-4">User</a> </p>
+     </div>
+    
+</main>

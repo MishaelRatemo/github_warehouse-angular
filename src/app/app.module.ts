@@ -13,7 +13,7 @@ import { TimepassedPipe } from './pipes/timepassed.pipe';
 import { TopnavbarComponent } from './components/topnavbar/topnavbar.component';
 import { ReposComponent } from './components/repos/repos.component';
 import { RepositoriesComponent } from './components/repositories/repositories.component'
-
+import { NgHttpLoaderModule } from 'ng-http-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,8 @@ import { RepositoriesComponent } from './components/repositories/repositories.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgHttpLoaderModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

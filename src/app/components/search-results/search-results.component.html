@@ -1,4 +1,4 @@
-<main class=" m-auto bg-dark d-flex justify-content-center align-items-center flex-wrap overflow-scroll">
+<main class=" m-auto bg-dark d-flex justify-content-center align-items-center flex-wrap overflow-auto">
   <div class=" d-flex flex-column text-light text-center p-3">
     <h3 class="text-center">Profile</h3>
     <img
@@ -85,4 +85,38 @@
       </tbody>
     </table>
   </div>
+
+
 </main>
+
+
+<h1 class=" text-center text-light p-3">{{results.login}}'s Public Repos</h1>
+<article class=" container-fluid d-flex flex-wrap justify-content-center align-items-center">
+  
+  <div *ngFor="let repo of repos" class="card m-1" style="width: 18rem;">
+    <img src="https://e7.pngegg.com/pngimages/817/648/png-clipart-git-repository-version-control-branching-source-code-github-logo-sign.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{repo.name}}</h5>
+      <table class='text-center d-flex justify-content-between'>
+        <!-- <tr > -->
+          <td class="btn- btn-success">{{repo.stargazers_count}} Stars</td>
+          <td class="btn- btn-info">{{repo.forks}} Forks</td>
+          <td class="btn- btn-dark">{{repo.watchers}} Watchers</td>
+        <!-- </tr> -->
+      </table>
+      <p class="card-text">{{repo.description}}.</p>
+      <p *ngIf="repo.description == null" class="card-text bg-warning"> Decription not available</p>
+
+    </div>
+    
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Language(s) used: <strong>{{repo.language}}</strong></li>
+      <li class="list-group-item">Created {{repo.created_at |timepassed }}</li>
+      <li class="list-group-item">Updated {{repo.updated_at |timepassed}}</li>
+    </ul>
+    <div class="card-body d-flex justify-content-end">
+      <a href="{{repo.html_url}}" class="card-link">Go to Repo</a>
+    </div>
+  </div>
+</article>
+

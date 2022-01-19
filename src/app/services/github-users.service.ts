@@ -29,6 +29,19 @@ export class GithubUsersService {
     })
   }
 
+  public getUserRepos(searchText:any){
+    return new Promise((resolve, reject) =>{
+      this.http.get(`https://api.github.com/users/${searchText}/repos`,this.header).subscribe(
+        (response)=>{
+          resolve(response);
+        },
+        (error)=>{
+          reject(error);
+        }
+      );
+    })
+  }
+
 
 //  reposData: Array<any>=[];
 

@@ -9,6 +9,7 @@ import { GithubUsersService } from 'src/app/services/github-users.service';
 })
 export class SearchResultsComponent implements OnInit {
   
+  
   constructor(public githubUserService: GithubUsersService, private route: ActivatedRoute,private router:Router) {
 
     
@@ -28,9 +29,19 @@ export class SearchResultsComponent implements OnInit {
         console.log(this.results)
       }).catch(console.error);
     }
+
+    // Repositories
+    if (this.searchText = this.route.snapshot.paramMap.get('query') !== null) {
+      this.searchText = this.route.snapshot.paramMap.get('query');
+      this.githubUserService.getUserRepos(this.searchText).then((response:any)=>{
+        this.repos = response;
+        console.log(this.repos)
+      }).catch(console.error);
+    }
   }
   searchText: any = '';
   results:any;
+  repos: any;
 
 
   showUserDetails(userId:number){

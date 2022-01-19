@@ -14,6 +14,7 @@ import { TopnavbarComponent } from './components/topnavbar/topnavbar.component';
 import { ReposComponent } from './components/repos/repos.component';
 import { RepositoriesComponent } from './components/repositories/repositories.component'
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { WarniningDirective } from './directives/warnining.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     TimepassedPipe,
     TopnavbarComponent,
     ReposComponent,
-    RepositoriesComponent
+    RepositoriesComponent,
+    WarniningDirective
   ],
   imports: [
     BrowserModule,
